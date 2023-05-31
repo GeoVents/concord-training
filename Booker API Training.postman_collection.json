@@ -595,7 +595,7 @@
 						"type": "text/javascript"
 					}
 				}
-			],
+			],}
 			"request": {
 				"method": "GET",
 				"header": [],
