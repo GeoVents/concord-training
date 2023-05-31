@@ -590,12 +590,12 @@
 							"});\r",
 							"\r",
 							
-							"});"
+							
 						],
 						"type": "text/javascript"
 					}
 				}
-			],}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
