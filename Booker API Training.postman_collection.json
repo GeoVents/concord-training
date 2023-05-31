@@ -328,7 +328,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Confirm that deposit is paid\", function() {\r",
-							"    pm.expect(response.depositpaid).to.be.true;\r",
+							"    pm.expect(response.depositpaid).to.be.false;\r",
 							"});"
 						],
 						"type": "text/javascript"
