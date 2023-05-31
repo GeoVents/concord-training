@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "79ada543-4766-4f2c-b9d2-1a82ee99b48f",
+		"name": "Mocky Training Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26145009"
+	},
+	"item": [
+		{
+			"name": "Mocky Test Set",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Verify the ID\", function() {\r",
+							"    pm.expect(response.id).to.be.string\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify the name\", function() {\r",
+							"    pm.expect(response.name).to.eql(\"My board 7\");\r",
+							"});\r",
+							"\r",
+							"//console.log(response.prefs.permissionLevel);\r",
+							"\r",
+							"let permissionLevel = response.prefs.permissionLevel;\r",
+							"\r",
+							"let voting = response.prefs.voting;\r",
+							"\r",
+							"let commentsStatus = response.prefs.comments.status;\r",
+							"\r",
+							"let commentsCount = response.prefs.comments.count;\r",
+							"\r",
+							"let totalPerMemberCount = response.limits['54bba24af6196bd5f824e563'].boards.totalPerMember.count;\r",
+							"\r",
+							"let totalPerMemberStatus = response.limits['54bba24af6196bd5f824e563'].boards.totalPerMember.status;\r",
+							"\r",
+							"let disableAt = response.limits['54bba24af6196bd5f824e563'].boards.totalPerMember.disableAt;\r",
+							"\r",
+							"let warnAt = response.limits['54bba24af6196bd5f824e563'].boards.totalPerMember.warnAt;\r",
+							"\r",
+							"pm.test(\"Verify that permissionLevel is set to private\", function() {\r",
+							"    pm.expect(permissionLevel).to.eql(\"private\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that voting is disabled\", function() {\r",
+							"    pm.expect(voting).to.eql(\"disabled\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that status is disabled\", function() {\r",
+							"    pm.expect(commentsStatus).to.eql(\"disabled\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that comments count is 0\", function() {\r",
+							"    pm.expect(commentsCount).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that totalPerMember has count\", function(){\r",
+							"    pm.expect(totalPerMemberCount).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that totalPerMember status is OK\", function() {\r",
+							"    pm.expect(totalPerMemberStatus).to.eql(\"ok\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that disableAt is 56050\", function() {\r",
+							"    pm.expect(disableAt).to.eql(56050);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that warnAt is 53100\", function() {\r",
+							"    pm.expect(warnAt).to.eql(53100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.mocky.io/v2/5ab34d8c2f00006600ca3652",
+					"protocol": "http",
+					"host": [
+						"www",
+						"mocky",
+						"io"
+					],
+					"path": [
+						"v2",
+						"5ab34d8c2f00006600ca3652"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
