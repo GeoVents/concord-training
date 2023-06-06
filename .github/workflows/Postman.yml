@@ -27,4 +27,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Postman Collections
-        run: newman run "SimpleBooks.postman_collection.json" --environment "SimpleBooks Env.postman_environment.json" --disable-unicode
+        run: newman run "SimpleBooks.postman_collection.json" --environment "SimpleBooks Env.postman_environment.json"
