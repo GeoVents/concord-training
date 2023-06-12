@@ -730,7 +730,7 @@
 	"variable": [
 		{
 			"key": "URL",
-			"value": "",
+			"value": "https://reqres.in",
 			"type": "string"
 		}
 	]
